@@ -2,6 +2,7 @@ package com.project.main;
 
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -22,12 +23,19 @@ public class MainAdmin {
 		Administrador admin = new Administrador("Omar", "admin", new Timestamp(new Date().getTime()));
 
 		try {
-			if (dao.save(admin)) {
-				System.out.println("Admin guardado en la BD");
-				System.out.println(admin);
-			} else {
-				System.out.println("Error al insertar el admin");
-			}
+			/*
+			dao.save(admin);
+			System.out.println("Admin guardado en la BD");
+			System.out.println(admin);
+			*/
+			List<Administrador> admins = dao.findAll();
+			
+			for(Administrador a : admins)
+				System.out.println(a);
+			
+			System.out.println(dao.getById(0));
+			
+			System.out.println(dao.findByNombre("om").toString());
 
 		} catch (CannotGetJdbcConnectionException ex) {
 			ex.printStackTrace();

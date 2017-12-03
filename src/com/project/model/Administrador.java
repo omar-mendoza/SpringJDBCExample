@@ -9,6 +9,10 @@ public class Administrador {
 	private String cargo;
 	Timestamp fechaCreacion;
 
+	public Administrador() {
+
+	}
+
 	public Administrador(String nombre, String cargo, Timestamp fechaCreacion) {
 		this.nombre = nombre;
 		this.cargo = cargo;
