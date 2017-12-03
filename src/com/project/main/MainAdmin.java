@@ -33,9 +33,9 @@ public class MainAdmin {
 			for(Administrador a : admins)
 				System.out.println(a);
 			
-			System.out.println(dao.getById(0));
+			System.out.println(dao.getById(1));
 			
-			System.out.println(dao.findByNombre("om").toString());
+			System.out.println(dao.findByNombre("gab").toString());
 
 		} catch (CannotGetJdbcConnectionException ex) {
 			ex.printStackTrace();

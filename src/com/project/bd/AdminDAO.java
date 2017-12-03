@@ -10,4 +10,7 @@ public interface AdminDAO {
 	public Administrador getById(int id);
 	public List<Administrador> findAll();
 	public List<Administrador> findByNombre(String nombre);
+	public boolean update(Administrador admin);
+	public boolean delete(int id);
+	public void saveAll(List<Administrador> admins);
 }
